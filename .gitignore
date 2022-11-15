@@ -1,5 +1,6 @@
 public
 static/styles
+static/processed_images
 .DS_Store
 
 # Logs
