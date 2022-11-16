@@ -14,3 +14,11 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+
+# List of  menu items. Used to construct the navigation bar.
+menu_items = [
+    { name = "blog", url = "$BASE_URL/blog"},
+    { name = "testimonial", url = "$BASE_URL/testimonials"},
+    { name = "art", url = "$BASE_URL/art" },
+    { name = "fake", url = "$BASE_URL/fake" },
+]
