@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <title>MyBlog</title>
   <link rel="stylesheet" href="{{ get_url(path="styles/style.css") }}">
+  <link rel="preload" href="{{ get_url(path="javascript/spotlight.bundle.js") }}" as="script">
 </head>
 
 <body>
@@ -20,6 +21,8 @@
       {% block content %} {% endblock %}
     </div>
   </section>
+
+  <script src="{{ get_url(path="javascript/spotlight.bundle.js") }}" defer></script>
 </body>
 
 </html>
