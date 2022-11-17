@@ -17,7 +17,7 @@
           {% for menu in config.extra.menu_items %}
               {% set link_url = menu.url | replace(from="$BASE_URL", to=config.base_url) %}
               {% set normal_class = "text-base font-medium text-white hover:text-indigo-50" %}
-              {% set active_class = "text-base font-medium text-white font-semibold underline decoration-white-900 underline-offset-4" %}
+              {% set active_class = "text-base text-white font-semibold underline decoration-white underline-offset-4" %}
               <a {% if current_url and current_url is starting_with(link_url) %}
                 class="{{active_class}}"
                 {% else %}
