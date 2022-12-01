@@ -1,3 +1,8 @@
+/* 
+Put your custom fonts at the top of the page!
+*/
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@400;700&display=swap');
+
 @tailwind base;
 
 @tailwind components;

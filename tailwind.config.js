@@ -11,6 +11,9 @@ module.exports = {
 
 
     extend: {
+      fontFamily: {
+                'myCustomFont': ['Anek Devanagari', 'sans-serif'], // class name of font used in HTML: ['name of font', 'backup font']
+            },
       // colors: {
       //   'teal': {
       //       100: "#d2f0ff",
