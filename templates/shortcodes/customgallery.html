@@ -14,6 +14,9 @@ https://github.com/nextapps-de/spotlight -->
   {%- endif %} {%- endfor %}
 </div>
 
+<!-- This is where you put the custom template that will be rendered when the user click on the image.
+Please see here for details: https://github.com/nextapps-de/spotlight#embedding-node-fragments
+-->
 {% for asset in page.assets -%} {%- if asset is matching("[.](jpg|png)$") -%}
 <div style="display: none">
   <div id="fragment-{{loop.index}}" class="relative w-screen h-screen" x-data="">
