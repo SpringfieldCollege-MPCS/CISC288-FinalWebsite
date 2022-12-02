@@ -1,0 +1,30 @@
+<!-- See all options here:
+https://github.com/nextapps-de/spotlight -->
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 spotlight-group">
+    {% for asset in page.assets -%} {%- if asset is matching("[.](jpg|png)$") -%}
+    {% set image = resize_image(path=asset, width=240, height=240, op="fill") %}
+    <a class="spotlight cursor-pointer" data-media="node" data-src="#fragment-{{loop.index}}">
+      <img src="{{ image.url }}" class="mt-0 mb-0"  />
+    </a>
+    {%- endif %} {%- endfor %}
+  </div>
+
+
+{# Need a for loop here to make the high res images pop up with custom look #}
+
+
+{% for asset in page.assets -%} {%- if asset is matching("[.](jpg|png)$") -%}
+
+<div style="display: none">
+  <div id="#fragment-{{loop.index}}" class="container mx-auto">
+      <img src="{{ get_url(path=asset)}}" class="mt-0 mb-0"  />
+  </div>
+</div>
+{%- endif %} {%- endfor %}
+{# <div style="display: none">
+    <div id="#fragment-{{loop.index}}" style="width: 100%">
+        <h1>Embedded Node Fragment</h1>
+        <p>Any HTML Content...</p>
+    </div>
+</div>
+   #}

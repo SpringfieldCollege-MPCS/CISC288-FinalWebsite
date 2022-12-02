@@ -17,3 +17,10 @@ Here is the same gallery but with advanced capabilities using [spotlight](https:
 {{ fancygallery() }}
 
 
+## Custom Gallery
+
+Here is the same spotlight gallery but with custom templates. Click the image to open up a spotlight gallery.
+
+{{ customgallery() }}
+
+
