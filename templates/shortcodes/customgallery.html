@@ -1,30 +1,39 @@
 <!-- See all options here:
 https://github.com/nextapps-de/spotlight -->
 <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 spotlight-group">
-    {% for asset in page.assets -%} {%- if asset is matching("[.](jpg|png)$") -%}
-    {% set image = resize_image(path=asset, width=240, height=240, op="fill") %}
-    <a class="spotlight cursor-pointer" data-media="node" data-src="#fragment-{{loop.index}}">
-      <img src="{{ image.url }}" class="mt-0 mb-0"  />
-    </a>
-    {%- endif %} {%- endfor %}
-  </div>
-
-
-{# Need a for loop here to make the high res images pop up with custom look #}
-
+  {% for asset in page.assets -%} {%- if asset is matching("[.](jpg|png)$") -%}
+  {% set image = resize_image(path=asset, width=240, height=240, op="fill") %}
+  <a
+    class="spotlight cursor-pointer"
+    data-media="node"
+    data-src="#fragment-{{loop.index}}"
+    data-theme="white"
+  >
+    <img src="{{ image.url }}" class="mt-0 mb-0" />
+  </a>
+  {%- endif %} {%- endfor %}
+</div>
 
 {% for asset in page.assets -%} {%- if asset is matching("[.](jpg|png)$") -%}
-
 <div style="display: none">
-  <div id="#fragment-{{loop.index}}" class="container mx-auto">
-      <img src="{{ get_url(path=asset)}}" class="mt-0 mb-0"  />
+  <div id="fragment-{{loop.index}}" class="relative w-screen h-screen" x-data="">
+    <div class="container mx-auto p-4">
+      <div class="flex flex-col items-center justify-center h-screen">
+        <img src="{{ get_url(path=asset)}}" class="mt-0 mb-0" />
+        <h1 class="text-2xl mt-4">Piece Name</h1>
+        <p class="text-center mt-4 max-w-lg">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
+          eligendi quasi dolor ab amet corporis temporibus vero asperiores hic
+          explicabo earum, illo totam obcaecati facere. Fuga dolorum ab quasi
+          omnis.
+        </p>
+        <div class="absolute bottom-4 right-4">
+          <button onclick="window.Spotlight.close()" class="bg-slate-600 w-32 text-white rounded-sm drop-shadow-lg py-2 px-3 text-lg">Add to Cart</button>
+        </div>
+  
+      </div>
+
+    </div>
   </div>
 </div>
 {%- endif %} {%- endfor %}
-{# <div style="display: none">
-    <div id="#fragment-{{loop.index}}" style="width: 100%">
-        <h1>Embedded Node Fragment</h1>
-        <p>Any HTML Content...</p>
-    </div>
-</div>
-   #}
