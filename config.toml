@@ -20,5 +20,5 @@ menu_items = [
     { name = "blog", url = "$BASE_URL/blog"},
     { name = "testimonial", url = "$BASE_URL/testimonials"},
     { name = "art", url = "$BASE_URL/art" },
-    { name = "fake", url = "$BASE_URL/fake" },
+    { name = "test", url = "$BASE_URL/test" },
 ]
